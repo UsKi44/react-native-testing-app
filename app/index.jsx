@@ -1,15 +1,12 @@
-import { Link } from "expo-router";
+import { ScrollView, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { Link } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-3xl font-pblack">Aora!</Text>
-      <StatusBar style="auto" />
-      <Link href="/home" className="text-blue-700">
-        Go to Home
-      </Link>
-    </View>
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView contentContainerStyle={{ height: "100%" }}></ScrollView>
+    </SafeAreaView>
   );
 }

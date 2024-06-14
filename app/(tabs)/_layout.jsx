@@ -1,11 +1,8 @@
 import { View, Text, Image } from "react-native";
 import { Tabs, Redirect } from "expo-router";
 import { icons } from "../../constants";
-import { useState } from "react";
 
 const TabIcon = ({ icon, color, name, focused }) => {
-  const [bla, setbla] = useState();
-
   return (
     <View className="items-center justify-center gap-2">
       <Image
@@ -15,7 +12,8 @@ const TabIcon = ({ icon, color, name, focused }) => {
         className="w-6 h-6"
       />
       <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs `}
+        style={{ color: color }}
       >
         {name}
       </Text>
@@ -30,6 +28,13 @@ const TabsLayout = () => {
         screenOptions={{
           tabBarShowLabel: false,
           tabBarActiveTintColor: "#FF8C00",
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: {
+            backgroundColor: "#161622",
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+          },
         }}
       >
         <Tabs.Screen
